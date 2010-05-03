@@ -4,7 +4,8 @@ import sys
 
 TEMPLATE = "page.html"
 OUTPUT_DIR = "out/"
-DATE_TIME_FORMAT = "%Y-%m-%d"
+DATE_FORMAT = "%Y-%m-%d"
+TIME_FORMAT = "%H:%M:%S"
 
 def read_file(filename):
     with open(filename,"r") as f:
@@ -22,7 +23,8 @@ def write_file(filename, content):
 
 def init_sections():
     sections = {}
-    sections["today"] = datetime.datetime.now().strftime(DATE_TIME_FORMAT)
+    sections["today"] = datetime.datetime.now().strftime(DATE_FORMAT)
+    sections["now"] = datetime.datetime.now().strftime(TIME_FORMAT)
     return sections
 
 def parse_sections(lines):
