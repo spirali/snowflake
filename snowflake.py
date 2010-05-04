@@ -82,7 +82,7 @@ def process_file(filename):
 
 def main():
     if len(sys.argv) == 1:
-        print "usage: webbuild <file>"
+        print "usage: snowflake <file>"
     else:    
         for filename in sys.argv[1:]:
             print "Processing ", filename, "..."
