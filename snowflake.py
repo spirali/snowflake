@@ -75,10 +75,14 @@ def output_filename(filename):
         basename = filename
     return basename + ".html"
 
+def preprocess(filename, sections):
+    return [ (output_filename(filename), sections) ]
+
 def process_file(filename):
     template = read_file(TEMPLATE)
-    output = replace_sections(template, read_sections(filename, True))
-    write_file(os.path.join(OUTPUT_DIR, output_filename(filename)), output)
+    for outfile, sections in preprocess(filename, read_sections(filename, True)):
+        output = replace_sections(template, sections)
+        write_file(os.path.join(OUTPUT_DIR, outfile), output)
 
 def main():
     if len(sys.argv) == 1:

@@ -1,6 +1,6 @@
 Snowflake is the ultra light static web generator. Instead a large collection of functions and settings, Snowflake offers minimalist codebase that can be easily customize to concrete needs.
 
 Example usage:
-$ cd example1
-$ python ../snowflake.py *.w
+$ cd examples/basic
+$ python ../../snowflake.py *.w
 See results in directory out/
