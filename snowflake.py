@@ -4,8 +4,6 @@ import sys
 
 TEMPLATE = "page.html"
 OUTPUT_DIR = "out/"
-DATE_FORMAT = "%Y-%m-%d"
-TIME_FORMAT = "%H:%M:%S"
 
 custom_tags = []
 
@@ -29,9 +27,6 @@ def write_file(filename, content):
         f.write(content)
 
 def init_sections(sections):
-    sections["today"] = datetime.datetime.now().strftime(DATE_FORMAT)
-    sections["now"] = datetime.datetime.now().strftime(TIME_FORMAT)
-           
     for tag_name, tag_function in custom_tags:
         sections[tag_name] = tag_function(sections)
 

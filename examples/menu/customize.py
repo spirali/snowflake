@@ -1,3 +1,4 @@
+import datetime
 import glob
 
 def make_link(url, content):
@@ -9,3 +10,13 @@ def menu(sections):
 	sections.sort(key=lambda s: int(s["position_in_menu"]))
 	lines = [ make_link(output_filename(s["__filename__"]), s["title"]) for s in sections ]
 	return "\n".join(lines)
+
+@tag
+def today(sections):
+    DATE_FORMAT = "%Y-%m-%d"
+    return datetime.datetime.now().strftime(DATE_FORMAT)
+
+@tag
+def now(sections):
+    TIME_FORMAT = "%H:%M:%S"
+    return datetime.datetime.now().strftime(TIME_FORMAT)
