@@ -2,7 +2,7 @@ import datetime
 import glob
 
 def make_link(url, content):
-	return "<a href='%s'/>%s</a>" % (url, content)
+	return '<a href="%s"/>%s</a>' % (url, content)
 
 @tag
 def menu(sections):
